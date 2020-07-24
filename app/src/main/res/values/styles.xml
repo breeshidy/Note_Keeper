@@ -31,5 +31,10 @@
         <item name="android:tint">@android:color/white</item>
     </style>
 
+    <style name="WeirdText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 
 </resources>
