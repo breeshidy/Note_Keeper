@@ -21,23 +21,24 @@
 
     <EditText
         android:id="@+id/text_note_title"
+        style="@style/WeirdText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:autofillHints="Note title"
-        style="@style/WeirdText"
-        android:text="@string/note_title"
+        android:hint="@string/note_title"
+        android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="@+id/spinner_courses"
         app:layout_constraintStart_toStartOf="@+id/spinner_courses"
         app:layout_constraintTop_toBottomOf="@+id/spinner_courses" />
 
     <EditText
         android:id="@+id/text_note_text"
+        style="@style/WeirdText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/note_text"
-        style="@style/WeirdText"
+        android:hint="@string/note_text"
         app:layout_constraintEnd_toEndOf="@+id/text_note_title"
         app:layout_constraintStart_toStartOf="@+id/text_note_title"
         app:layout_constraintTop_toBottomOf="@+id/text_note_title" />
