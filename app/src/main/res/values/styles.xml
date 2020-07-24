@@ -32,7 +32,7 @@
         <item name="android:tint">@android:color/white</item>
     </style>
 
-    <style name="WeirdText" parent="@style/Widget.AppCompat.AutoCompleteTextView">
+    <style name="WeirdText" parent="@style/Widget.AppCompat.EditText">
         <item name="android:textColor">@android:color/holo_green_dark</item>
         <item name="android:textColorHint">@android:color/holo_red_dark</item>
     </style>
