@@ -9,6 +9,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="editTextStyle">@style/WeirdText</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -31,9 +32,9 @@
         <item name="android:tint">@android:color/white</item>
     </style>
 
-    <style name="WeirdText" parent="@style/Widget.AppCompat.EditText">
-        <item name="android:textColor">@color/colorOrange</item>
-        <item name="android:textStyle">bold</item>
+    <style name="WeirdText" parent="@style/Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textColor">@android:color/holo_green_dark</item>
+        <item name="android:textColorHint">@android:color/holo_red_dark</item>
     </style>
 
 
