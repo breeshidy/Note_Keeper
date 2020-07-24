@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/note_text"
+        android:textStyle="@string/app_name"
         app:layout_constraintEnd_toEndOf="@+id/text_note_title"
         app:layout_constraintStart_toStartOf="@+id/text_note_title"
         app:layout_constraintTop_toBottomOf="@+id/text_note_title" />
