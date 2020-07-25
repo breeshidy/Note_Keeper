@@ -56,16 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.settings){
-            Log.d(TAG, "onOptionsItemSelected: settings button clicked");
-            startActivity(new Intent(this, SettingsActivity.class));
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +138,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mCourseRecyclerAdapter = new CourseRecyclerAdapter(this, course);
 
 
+    }
+
+    //when the setting button is clicked
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.settings){
+            Log.d(TAG, "onOptionsItemSelected: settings button clicked");
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void displayNotes() {
