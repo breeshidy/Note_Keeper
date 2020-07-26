@@ -6,9 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -86,8 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         mNavigationView = findViewById(R.id.nav_view);
-        //implement on selected item
-        mNavigationView.setNavigationItemSelectedListener(this);
+
 
         // TODO: 2020-07-23 The stacked button function is affecting the onNavigationItemSelected.
         // Passing each menu ID as a set of Ids because each
@@ -102,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupActionBarWithNavController(this, mNavController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(mNavigationView, mNavController);
 
+        //implement on selected item
+        mNavigationView.setNavigationItemSelectedListener(this);
 
         initializeDisplayContent();
     }
@@ -142,9 +141,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //when the setting button is clicked
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.settings){
+        if(id == R.id.action_settings){
             Log.d(TAG, "onOptionsItemSelected: settings button clicked");
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
@@ -162,8 +161,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void selectNavigationMenuItem(int id) {
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        Menu menu = navigationView.getMenu();
+        mNavigationView = findViewById(R.id.nav_view);
+        Menu menu = mNavigationView.getMenu();
         //set it to always be the highlighted/currently selected menu on nav bar
         menu.findItem(id).setChecked(true);
     }
@@ -202,37 +201,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = menuItem.getItemId();
 
         if (id == R.id.nav_note){
-            //displayNotes();
-            Toast.makeText(getApplicationContext(), "Note", Toast.LENGTH_LONG).show();
-            //displayNotes();
+            displayNotes();
+//            Toast.makeText(getApplicationContext(), "Note", Toast.LENGTH_LONG).show();
+            displayNotes();
             Log.d(TAG, "onNavigationItemSelected: display notes ");
 
         } else if (id == R.id.nav_courses){
-            Toast.makeText(getApplicationContext(),"You clicked on Courses", Toast.LENGTH_LONG).show();
+            displayCourses();
 //            handleSelection("Course");
             Log.d(TAG, "onNavigationItemSelected: display courses");
 
         }else if (id == R.id.nav_share){
-            Toast.makeText(getApplicationContext(),"You clicked on Courses", Toast.LENGTH_LONG).show();
 
-            //handleSelection(R.string.nav_share_message);
-
-            //println("Print Share");
+            handleSelection(R.string.nav_share_message);
 
         }else if (id == R.id.nav_send){
-            Toast.makeText(getApplicationContext(),"You clicked on Courses", Toast.LENGTH_LONG).show();
 
-            //handleSelection(R.string.nav_send_messgae);
-
-        }else if (id == R.id.nav_toast){
-            Toast.makeText(getApplicationContext(),"You clicked on Toast", Toast.LENGTH_LONG).show();
-
-            //handleSelection(R.string.nav_send_messgae);
-
-        }else if (id == R.id.nav_show){
-            Toast.makeText(getApplicationContext(),"You clicked on Show", Toast.LENGTH_LONG).show();
-
-            //handleSelection(R.string.nav_send_messgae);
+            handleSelection(R.string.nav_send_messgae);
 
         }
 
