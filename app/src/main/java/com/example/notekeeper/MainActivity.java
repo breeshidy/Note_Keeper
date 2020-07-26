@@ -93,14 +93,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         // AppBarConfiguration object to manage the behavior of the Navigation button in the upper-left corner of your app's display area
-//        mAppBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.nav_note, R.id.nav_courses, R.id.nav_slideshow,
-//                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
-//                .setDrawerLayout(drawer)
-//                .build();
-//        mNavController = Navigation.findNavController(this, R.id.nav_host_fragment);
-//        NavigationUI.setupActionBarWithNavController(this, mNavController, mAppBarConfiguration);
-//        NavigationUI.setupWithNavController(mNavigationView, mNavController);
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_note, R.id.nav_courses, R.id.nav_slideshow,
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                .setDrawerLayout(drawer)
+                .build();
+        mNavController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, mNavController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(mNavigationView, mNavController);
 
 
         initializeDisplayContent();
@@ -202,25 +202,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = menuItem.getItemId();
 
         if (id == R.id.nav_note){
-            displayNotes();
+            //displayNotes();
             Toast.makeText(getApplicationContext(), "Note", Toast.LENGTH_LONG).show();
-            displayNotes();
+            //displayNotes();
             Log.d(TAG, "onNavigationItemSelected: display notes ");
 
         } else if (id == R.id.nav_courses){
-            displayCourses();
+            Toast.makeText(getApplicationContext(),"You clicked on Courses", Toast.LENGTH_LONG).show();
 //            handleSelection("Course");
             Log.d(TAG, "onNavigationItemSelected: display courses");
 
         }else if (id == R.id.nav_share){
+            Toast.makeText(getApplicationContext(),"You clicked on Courses", Toast.LENGTH_LONG).show();
 
-            handleSelection(R.string.nav_share_message);
+            //handleSelection(R.string.nav_share_message);
 
-            println("Print Share");
+            //println("Print Share");
 
         }else if (id == R.id.nav_send){
+            Toast.makeText(getApplicationContext(),"You clicked on Courses", Toast.LENGTH_LONG).show();
 
-            handleSelection(R.string.nav_send_messgae);
+            //handleSelection(R.string.nav_send_messgae);
+
+        }else if (id == R.id.nav_toast){
+            Toast.makeText(getApplicationContext(),"You clicked on Toast", Toast.LENGTH_LONG).show();
+
+            //handleSelection(R.string.nav_send_messgae);
+
+        }else if (id == R.id.nav_show){
+            Toast.makeText(getApplicationContext(),"You clicked on Show", Toast.LENGTH_LONG).show();
+
+            //handleSelection(R.string.nav_send_messgae);
 
         }
 
