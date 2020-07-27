@@ -9,4 +9,18 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <!-- Favourite Social Preference -->
+    <string-array name="fav_social_entries">
+        <item>Google+</item>
+        <item>Facebook</item>
+        <item>Twitter</item>
+    </string-array>
+
+    <string-array name="fav_social_values">
+        <item>http://plus.google.com</item>
+        <item>@string/fav_social_default</item>
+        <item>http://twitter.com</item>
+    </string-array>
+
 </resources>
